@@ -307,8 +307,7 @@
 
 .menu-card-logo {
   width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  height: 100%;
   object-fit: cover;
   border: 2px solid #b8860b;
   display: none; /* Hide the small logo since we're using watermark */
@@ -373,15 +372,17 @@
   }
   
   .menu-card::before {
-    width: 150px;
-    height: 150px;
-    right: -10px;
+    width: 200px;
+    height: 100%;
+    right: 50%;
+    transform: translate(50%, -50%);
     opacity: 0.08;
+    background-size: contain;
   }
   
   .menu-card-logo {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100%px;
   }
   
   .menu-card-header h3 {
