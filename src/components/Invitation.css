@@ -7,6 +7,7 @@
   position: relative;
   overflow: visible;
   min-height: fit-content;
+  padding-bottom: 200px; /* Much more space for music player on mobile */
 }
 
 .invitation-paper {
@@ -24,6 +25,7 @@
   font-family: 'Georgia', serif;
   color: #8b5a3c;
   line-height: 1.6;
+  margin-bottom: 50px; /* Add bottom margin for music player */
 }
 
 .invitation-header {
@@ -198,12 +200,14 @@
 @media (max-width: 768px) {
   .invitation-wrapper {
     padding: 1rem;
+    padding-bottom: 100px; /* Even more space on mobile for music player */
   }
   
   .invitation-paper {
     padding: 2rem;
     margin: 0 auto;
     max-width: 100%;
+    margin-bottom: 150px; /* Even more space on mobile */
   }
   
   .invitation-title {

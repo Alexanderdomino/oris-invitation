@@ -100,23 +100,32 @@ const Invitation: React.FC = () => {
           <div className="detail-item">
             <span className="detail-icon">📅</span>
             <span className="detail-text">
-              <strong>Dato:</strong> Lørdag den 15. august 2025
+              <strong>Dato:</strong> Fredag den 12. september 2025
             </span>
           </div>
           
           <div className="detail-item">
             <span className="detail-icon">⏰</span>
             <span className="detail-text">
-              <strong>Tidspunkt:</strong> 4:00 PM - Sent på natten wuhuu!
+              <strong>Tidspunkt:</strong> 16:30 - Sent på natten wuhuu!
+            </span>
+          </div>
+
+          <div className="detail-item">
+            <span className="detail-icon">🍔</span>
+            <span className="detail-text">
+              <strong>Spisning:</strong> 17:30
             </span>
           </div>
           
           <div className="detail-item">
             <span className="detail-icon">📍</span>
             <span className="detail-text">
-              <strong>Sted:</strong> Hammel festlokale
+              <strong>Sted:</strong> Hos Hanne
               <br />
-              <span className="address">Festvej 10, Hammel</span>
+              <span className="address">Urbakkevej 2</span>
+              <br />
+              <span className="address">8450 Hammel</span>
             </span>
           </div>
         </motion.div>
@@ -128,7 +137,7 @@ const Invitation: React.FC = () => {
         >
           <h3>Hvad du kan forvente:</h3>
           <div className="activities-grid">
-            <div className="activity-item">🎵 Live DJ Jose</div>
+            <div className="activity-item">🎵 Musikindslag Kl. 20.00</div>
             <motion.div 
               className="activity-item clickable-food"
               onClick={scrollToMenu}
@@ -138,10 +147,10 @@ const Invitation: React.FC = () => {
             >
               🍔 Den lækreste mad
             </motion.div>
-            <div className="activity-item">🍹 Cocktails og drinks</div>
-            <div className="activity-item">🏊 Svingning af træbenet</div>
-            <div className="activity-item">🎯 Stoleleg</div>
-            <div className="activity-item">💃 Lækre Oris damer</div>
+            <div className="activity-item">🍹 Fri bar</div>
+            <div className="activity-item">💃 Svingning af træbenet</div>
+            <div className="activity-item">🪑 Stoleleg</div>
+            <div className="activity-item">👸 Lækre Oris damer</div>
           </div>
         </motion.div>
 
@@ -150,7 +159,7 @@ const Invitation: React.FC = () => {
           className="dress-code"
           variants={itemVariants}
         >
-          <p><strong>Dress Code:</strong> Sommer tøj - På med dansestøvlerne! 🌈</p>
+          <p><strong>Dress Code:</strong> Sommer tøj - På med danseskoene! 🌈</p>
         </motion.div>
 
         {/* Menu Card */}
@@ -195,8 +204,7 @@ const Invitation: React.FC = () => {
         >
           <p>Ved spørgsmål, kontakt venligst:</p>
           <div className="contact-info">
-            <p>📧 josefine@sommerfest.com or Regitze@sommerfest.com</p>
-            <p>📱 (+45) 23 82 68 86</p>
+            <p>📱 (Jose) 23 82 68 86 / (Regitze) 40 61 95 50</p>
           </div>
         </motion.div>
 
