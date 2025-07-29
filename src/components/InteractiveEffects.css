@@ -1,0 +1,134 @@
+.interactive-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.floating-balloon {
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 
+    inset -3px -3px 8px rgba(0, 0, 0, 0.1),
+    0 3px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+.balloon-string {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: 25px;
+  background: #8b4513;
+  border-radius: 1px;
+}
+
+.balloon-string::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #8b4513;
+  border-radius: 50%;
+}
+
+.click-hint-indicator {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.hint-text {
+  background: rgba(255, 255, 255, 0.9);
+  color: #8b5a3c;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e6d3a3;
+  backdrop-filter: blur(10px);
+  font-family: 'Georgia', serif;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .floating-balloon {
+    width: 30px;
+    height: 38px;
+  }
+  
+  .balloon-string {
+    height: 20px;
+    bottom: -20px;
+  }
+  
+  .balloon-string::after {
+    width: 5px;
+    height: 5px;
+    bottom: -6px;
+  }
+  
+  .hint-text {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .click-hint-indicator {
+    top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-balloon {
+    width: 25px;
+    height: 32px;
+  }
+  
+  .balloon-string {
+    height: 15px;
+    width: 1px;
+    bottom: -15px;
+  }
+  
+  .balloon-string::after {
+    width: 4px;
+    height: 4px;
+    bottom: -5px;
+  }
+  
+  .hint-text {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .click-hint-indicator {
+    top: 10px;
+  }
+}
+
+/* Hide hint after a while */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.click-hint-indicator {
+  animation: fadeOut 10s ease-out forwards;
+}

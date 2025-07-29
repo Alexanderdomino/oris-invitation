@@ -1,0 +1,252 @@
+.invitation-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow: visible;
+  min-height: fit-content;
+}
+
+.invitation-paper {
+  background: linear-gradient(135deg, #fffef7, #faf9f0);
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 2px solid #e6d3a3;
+  position: relative;
+  font-family: 'Georgia', serif;
+  color: #8b5a3c;
+  line-height: 1.6;
+}
+
+.invitation-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.header-decoration {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.invitation-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  color: #b8860b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', serif;
+}
+
+.divider {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  color: #daa520;
+}
+
+.invitation-message {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.invitation-message p {
+  font-size: 1.1rem;
+  margin: 0.8rem 0;
+  color: #8b5a3c;
+}
+
+.invitation-message h2 {
+  font-size: 1.8rem;
+  color: #dc143c;
+  margin: 1rem 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.event-details {
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e6d3a3;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.detail-text {
+  flex: 1;
+}
+
+.address {
+  font-style: italic;
+  color: #9a6b3e;
+  font-size: 0.95rem;
+}
+
+.activities-section {
+  margin: 2rem 0;
+}
+
+.activities-section h3 {
+  text-align: center;
+  color: #b8860b;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.activity-item {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #8b5a3c;
+}
+
+.dress-code {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 160, 122, 0.3));
+  border-radius: 10px;
+  border: 1px solid rgba(255, 182, 193, 0.5);
+}
+
+.rsvp-section {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(220, 20, 60, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(220, 20, 60, 0.3);
+}
+
+.contact-info {
+  margin-top: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.invitation-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e6d3a3;
+}
+
+.footer-decoration {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.signature {
+  font-style: italic;
+  color: #b8860b;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.floating-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .invitation-wrapper {
+    padding: 1rem;
+  }
+  
+  .invitation-paper {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .invitation-title {
+    font-size: 2rem;
+  }
+  
+  .invitation-message h2 {
+    font-size: 1.5rem;
+  }
+  
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-item {
+    font-size: 1rem;
+  }
+  
+  .header-decoration,
+  .footer-decoration {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .invitation-wrapper {
+    padding: 0.5rem;
+  }
+  
+  .invitation-paper {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .invitation-title {
+    font-size: 1.8rem;
+  }
+  
+  .detail-icon {
+    font-size: 1.2rem;
+  }
+  
+  .floating-element {
+    font-size: 1.5rem;
+  }
+}

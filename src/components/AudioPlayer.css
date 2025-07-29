@@ -1,0 +1,146 @@
+.audio-controls {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e6d3a3;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  min-width: 280px;
+}
+
+.music-note-animation {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.music-note {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.audio-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.audio-toggle:hover {
+  background: linear-gradient(135deg, #ff5252, #ff7979);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.audio-toggle.playing {
+  background: linear-gradient(135deg, #4ecdc4, #6dd5ed);
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.audio-toggle.playing:hover {
+  background: linear-gradient(135deg, #45b7d1, #96ceb4);
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+}
+
+.audio-icon {
+  font-size: 1.2rem;
+}
+
+.audio-text {
+  flex: 1;
+  text-align: left;
+}
+
+.audio-info {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.now-playing {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #8b5a3c;
+  font-weight: bold;
+}
+
+.audio-note {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.8rem;
+  color: #9a6b3e;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .audio-controls {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    min-width: auto;
+    padding: 1rem;
+  }
+  
+  .audio-toggle {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+  
+  .music-note {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .audio-controls {
+    padding: 0.8rem;
+  }
+  
+  .audio-toggle {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+    gap: 0.6rem;
+  }
+  
+  .audio-icon {
+    font-size: 1rem;
+  }
+  
+  .now-playing {
+    font-size: 0.8rem;
+  }
+  
+  .audio-note {
+    font-size: 0.7rem;
+  }
+}
+
+/* Animation for audio controls entrance */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.audio-controls {
+  animation: slideInFromRight 0.5s ease-out;
+}
