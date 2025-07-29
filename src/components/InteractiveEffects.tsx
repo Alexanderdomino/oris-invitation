@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import confetti from 'canvas-confetti'
 import './InteractiveEffects.css'
+import { balloons } from "balloons-js"
 
 interface InteractiveEffectsProps {
   isActive: boolean
@@ -44,11 +45,29 @@ const InteractiveEffects: React.FC<InteractiveEffectsProps> = ({ isActive }) => 
     }
   }, [isActive])
 
+  // Generate periodic balloons using balloons-js library
+  useEffect(() => {
+    if (!isActive) return
+
+    const generateBalloons = () => {
+      // Call balloons() method from balloons-js library
+      balloons()
+    }
+
+    // Generate balloons every 45-60 seconds (less frequent for better performance)
+    const interval = setInterval(generateBalloons, 45000 + Math.random() * 15000)
+    
+    // Generate initial balloons after a delay
+    setTimeout(generateBalloons, 8000)
+
+    return () => clearInterval(interval)
+  }, [isActive])
+
   if (!isActive) return null
 
   return (
     <div className="interactive-effects">
-      {/* Interactive effects container */}
+      {/* Balloons are handled by balloons-js library */}
     </div>
   )
 }
