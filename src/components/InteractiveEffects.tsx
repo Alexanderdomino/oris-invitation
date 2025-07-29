@@ -13,7 +13,7 @@ const InteractiveEffects: React.FC<InteractiveEffectsProps> = ({ isActive }) => 
     if (!isActive) return
 
     let lastConfetti = 0
-    const confettiCooldown = 1000 // 1 second cooldown between confetti
+    const confettiCooldown = 350 // 350 milliseconds cooldown between confetti
 
     const handleClick = (e: MouseEvent | TouchEvent) => {
       const now = Date.now()

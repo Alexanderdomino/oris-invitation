@@ -17,6 +17,16 @@ const Invitation: React.FC = () => {
     return () => clearTimeout(timer)
   }, [])
 
+  const scrollToMenu = () => {
+    const menuSection = document.getElementById('menu-section')
+    if (menuSection) {
+      menuSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      })
+    }
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -119,7 +129,15 @@ const Invitation: React.FC = () => {
           <h3>Hvad du kan forvente:</h3>
           <div className="activities-grid">
             <div className="activity-item">🎵 Live DJ Jose</div>
-            <div className="activity-item">🍔 Den lækreste mad</div>
+            <motion.div 
+              className="activity-item clickable-food"
+              onClick={scrollToMenu}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              title="Klik for at se menu"
+            >
+              🍔 Den lækreste mad
+            </motion.div>
             <div className="activity-item">🍹 Cocktails og drinks</div>
             <div className="activity-item">🏊 Svingning af træbenet</div>
             <div className="activity-item">🎯 Stoleleg</div>
@@ -133,6 +151,41 @@ const Invitation: React.FC = () => {
           variants={itemVariants}
         >
           <p><strong>Dress Code:</strong> Sommer tøj - På med dansestøvlerne! 🌈</p>
+        </motion.div>
+
+        {/* Menu Card */}
+        <motion.div
+          id="menu-section"
+          className="menu-card"
+          variants={itemVariants}
+        >
+          <div className="menu-card-header">
+            <h3>TandMad</h3>
+          </div>
+
+          <div className="menu-card-content">
+            <div className="menu-card-section">
+              <h4>Snacks <em>*Ankomst - godt til bobler*</em></h4>
+              <p>Grillet brød - ansjoser i olie - citron - timian</p>
+              <p>Butterdejs twists - brunet smør - rosmarin - dild dip</p>
+              
+              <h5>Brød & Tapenader:</h5>
+              <p>Harydari - Babaganush</p>
+            </div>
+
+            <div className="menu-card-section">
+              <h4>Hovedretter</h4>
+              <p>Hvid fisk - grønne oliven - citronskal - panko crumble - tzatziki</p>
+              <p>Stegt spidskål - cashew sauce - miso - tempeh</p>
+              <p>Honning glaseret gulæroder - ricotta - gochugaru - citronskal</p>
+              <p>Blomkål - couscous - honning - tahini dressing</p>
+            </div>
+
+            <div className="menu-card-section">
+              <h4>Dessert</h4>
+              <p>Tiramisu - som vi kender den bedst</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* RSVP */}

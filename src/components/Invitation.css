@@ -250,3 +250,149 @@
     font-size: 1.5rem;
   }
 }
+
+/* Food Menu Card Styles */
+.clickable-food {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.clickable-food:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #b8860b;
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.2);
+}
+
+.menu-card {
+  margin: 2rem 0;
+  background: linear-gradient(135deg, #fffef7, #faf9f0);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #e6d3a3;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.menu-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 100%;
+  background-image: url('/food-logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.menu-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e6d3a3;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-card-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #b8860b;
+  display: none; /* Hide the small logo since we're using watermark */
+}
+
+.menu-card-header h3 {
+  font-size: 2rem;
+  color: #b8860b;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+}
+
+.menu-card-content {
+  font-family: 'Georgia', serif;
+  color: #8b5a3c;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-card-section {
+  margin-bottom: 1.5rem;
+}
+
+.menu-card-section:last-child {
+  margin-bottom: 0;
+}
+
+.menu-card-section h4 {
+  font-size: 1.3rem;
+  color: #b8860b;
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.menu-card-section h5 {
+  font-size: 1.1rem;
+  color: #8b5a3c;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.menu-card-section em {
+  font-style: italic;
+  color: #a0845c;
+  font-size: 0.9rem;
+}
+
+.menu-card-section p {
+  margin: 0.5rem 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Mobile responsive for menu card */
+@media (max-width: 768px) {
+  .menu-card {
+    padding: 1.5rem;
+  }
+  
+  .menu-card::before {
+    width: 150px;
+    height: 150px;
+    right: -10px;
+    opacity: 0.08;
+  }
+  
+  .menu-card-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .menu-card-header h3 {
+    font-size: 1.6rem;
+  }
+  
+  .menu-card-section h4 {
+    font-size: 1.2rem;
+  }
+  
+  .menu-card-section p {
+    font-size: 0.9rem;
+  }
+}
