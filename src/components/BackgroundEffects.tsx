@@ -25,21 +25,21 @@ const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ isLetterOpen }) =
     }
   }, [isLetterOpen, fireworksControls])
 
-  // Generate balloon positions
-  const balloons = Array.from({ length: 8 }, (_, i) => ({
+  // Generate balloon positions - reduced for performance
+  const balloons = Array.from({ length: 4 }, (_, i) => ({ // Reduced from 8 to 4
     id: i,
     left: Math.random() * 100,
     delay: Math.random() * 3,
-    duration: 8 + Math.random() * 4,
-    color: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#fd79a8', '#a29bfe', '#6c5ce7'][i]
+    duration: 10 + Math.random() * 4, // Slightly longer duration
+    color: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4'][i]
   }))
 
-  const stars = Array.from({ length: 20 }, (_, i) => ({
+  const stars = Array.from({ length: 10 }, (_, i) => ({ // Reduced from 20 to 10
     id: i,
     left: Math.random() * 100,
     top: Math.random() * 100,
     delay: Math.random() * 5,
-    duration: 3 + Math.random() * 2
+    duration: 4 + Math.random() * 2 // Slightly longer duration
   }))
 
   return (
@@ -114,7 +114,7 @@ const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ isLetterOpen }) =
           animate={fireworksControls}
           initial={{ opacity: 0 }}
         >
-          {Array.from({ length: 6 }, (_, i) => (
+          {Array.from({ length: 3 }, (_, i) => ( // Reduced from 6 to 3
             <motion.div
               key={i}
               className="firework"
@@ -129,20 +129,20 @@ const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ isLetterOpen }) =
                 rotate: [0, 360]
               }}
               transition={{
-                duration: 2,
-                delay: i * 0.5,
+                duration: 2.5, // Slightly longer
+                delay: i * 0.8, // More spread out
                 repeat: Infinity,
-                repeatDelay: 3,
+                repeatDelay: 5, // Longer delay between repeats
                 ease: 'easeOut'
               }}
             >
               <div className="firework-burst">
-                {Array.from({ length: 8 }, (_, j) => (
+                {Array.from({ length: 6 }, (_, j) => ( // Reduced from 8 to 6
                   <motion.div
                     key={j}
                     className="firework-particle"
                     style={{
-                      transform: `rotate(${j * 45}deg)`
+                      transform: `rotate(${j * 60}deg)` // Adjusted angle
                     }}
                     animate={{
                       scale: [0, 1, 0],

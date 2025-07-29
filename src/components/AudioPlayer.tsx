@@ -117,11 +117,11 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ shouldPlay }) => {
 
           <div className="audio-info">
             <p className="now-playing">
-              {isPlaying ? '� Frank Sinatra is playing!' : '🎵 Click to start the music!'}
+              {isPlaying ? 'DJ Jose Spiller Frank Sinatra!' : '🎵 Klik for at starte!'}
             </p>
             {!isPlaying && (
               <p className="audio-note">
-                Classic Frank Sinatra to set the perfect party mood! 🎤
+                Så kan du øve dine trin derhjemme! 🎤
               </p>
             )}
           </div>

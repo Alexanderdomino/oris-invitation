@@ -1,31 +1,36 @@
 import { useEffect } from 'react'
-import { motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import './InteractiveEffects.css'
-import { balloons } from "balloons-js"
 
 interface InteractiveEffectsProps {
   isActive: boolean
 }
 
 const InteractiveEffects: React.FC<InteractiveEffectsProps> = ({ isActive }) => {
-  // Handle click/touch confetti
+  // Handle click/touch confetti with throttling
   useEffect(() => {
     if (!isActive) return
 
+    let lastConfetti = 0
+    const confettiCooldown = 1000 // 1 second cooldown between confetti
+
     const handleClick = (e: MouseEvent | TouchEvent) => {
+      const now = Date.now()
+      if (now - lastConfetti < confettiCooldown) return
+      
+      lastConfetti = now
       const x = 'touches' in e ? e.touches[0].clientX : e.clientX
       const y = 'touches' in e ? e.touches[0].clientY : e.clientY
 
-      // Create confetti at click/touch position
+      // Create lighter confetti at click/touch position
       confetti({
-        particleCount: 50,
-        spread: 60,
+        particleCount: 25, // Reduced from 50
+        spread: 45, // Reduced from 60
         origin: {
           x: x / window.innerWidth,
           y: y / window.innerHeight
         },
-        colors: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#fd79a8', '#a29bfe']
+        colors: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#ffeaa7'] // Reduced colors
       })
     }
 
@@ -39,29 +44,11 @@ const InteractiveEffects: React.FC<InteractiveEffectsProps> = ({ isActive }) => 
     }
   }, [isActive])
 
-  // Generate periodic balloons using balloons-js library
-  useEffect(() => {
-    if (!isActive) return
-
-    const generateBalloons = () => {
-      // Call balloons() method from balloons-js library
-      //balloons()
-    }
-
-    // Generate balloons every 30-40 seconds
-    const interval = setInterval(generateBalloons, 30000 + Math.random() * 10000)
-    
-    // Generate initial balloons
-    setTimeout(generateBalloons, 5000)
-
-    return () => clearInterval(interval)
-  }, [isActive])
-
   if (!isActive) return null
 
   return (
     <div className="interactive-effects">
-      {/* Balloons are now handled by balloons-js library */}
+      {/* Interactive effects container */}
     </div>
   )
 }
